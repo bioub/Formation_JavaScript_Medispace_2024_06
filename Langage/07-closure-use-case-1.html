@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    function createButton(val) {
+      const btnEl = document.createElement('button');
+      btnEl.innerText = val;
+
+      btnEl.addEventListener('click', () => {
+        // au moment du click, l'appel de createButton est déjà
+        // terminé (le bouton est bien à l'écran)
+        // val est tout de même sauvegardé, c'est la valeur
+        // qui correspond à l'appel de createButton pour ce callback
+        console.log(val);
+      });
+
+      document.body.append(btnEl);
+    }
+
+    createButton('Button 1');
+    createButton('Button 2');
+    createButton('Button 3');
+  </script>
+</body>
+</html>

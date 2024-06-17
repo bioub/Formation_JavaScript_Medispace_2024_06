@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
+  <script>
+    const btnEls = document.querySelectorAll('button');
+
+    for (const btnEl of btnEls) {
+      // une closure peut aussi être créée par un block
+      // ici grace à const (ou let)
+      // ATTENTION avec var pas de closure (au click = toujours le dernier bouton)
+      btnEl.addEventListener('click', () => {
+        // btnEl est bien le bouton sur lequel on clique
+        // le bouton qui est sauvegardé au passage de la boucle
+        console.log(btnEl.innerText);
+      });
+    }
+
+  </script>
+</body>
+</html>
