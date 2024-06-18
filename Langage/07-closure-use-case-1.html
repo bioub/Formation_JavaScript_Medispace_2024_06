@@ -26,6 +26,15 @@
     createButton('Button 1');
     createButton('Button 2');
     createButton('Button 3');
+
+    // pile d'appel
+    // ^
+    // |
+    // |                                       [log      ]
+    // |[crBtn][crBtn][crBtn] ⟳                [taskClick]
+    // +----------------------------------------(click)--------------------1000ms-----> temps
+    //                  E        B                       A       D                C
+
   </script>
 </body>
 </html>
