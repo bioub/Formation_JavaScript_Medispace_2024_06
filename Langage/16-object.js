@@ -114,6 +114,13 @@ console.log(user1[method]()); // Hello Romain
 //   }
 // }
 
+for (const key in user1) {
+  if (user1.hasOwnProperty(key)) {
+    const value = user1[key];
+    console.log(value);
+  }
+}
+
 // en plus moderne
 for (const key of Object.keys(user1)) {
   const value = user1[key];
@@ -158,3 +165,18 @@ console.log(adminUser.hello()); // Hello admin (isAdmin)
 const myStr = String.fromCharCode(65, 66, 67);
 console.log(myStr); // "ABC"
 console.log(myStr.charCodeAt(2)); // 67
+
+
+const obj = {};
+
+// extension
+// obj.myKey = 'myValue';
+
+// extension plus fine avec
+Object.defineProperty(obj, 'myKey', {
+  value: 'myValue',
+  // déjà par defaut
+  // writable: false,
+  // enumerable: false, // pas dans le JSON et pas dans les boucles
+  // configurable: false, 
+})
