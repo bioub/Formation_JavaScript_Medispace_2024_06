@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "Langage",
+			"path": "Langage"
+		},
+		{
+			"name": "TypeScript",
+			"path": "TypeScript"
+		},
+		{
+			"path": "Unit-Tests"
+		},
+		{
+			"path": "Modules"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Modules"
+	}
+}
