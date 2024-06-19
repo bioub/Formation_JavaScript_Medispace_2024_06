@@ -58,10 +58,10 @@ const user = {
   name: "Romain",
 };
 
-// REST object
+// SPREAD object
 const cloneUser = { ...user };
 
-// SPREAD object
+// REST object
 //       { name: "Romain"}
 // const { name: newName = '' , ...restObjet } = user;
 const { name } = user;

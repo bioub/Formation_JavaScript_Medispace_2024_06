@@ -65,6 +65,7 @@ const users = [
 // function User(name) {
 //   this.name = name;
 //   this.isAdmin = false;
+//
 // }
 
 // User.myStaticMethod = function() {};
@@ -86,6 +87,8 @@ class User {
     return `Hello ${this.name}`;
   }
 }
+
+
 
 const user1 = new User('Romain');
 user1.email = 'romain@mail.com';
@@ -126,6 +129,15 @@ for (const key of Object.keys(user1)) {
   const value = user1[key];
   console.log(key, value);
 }
+// en plus moderne
+for (const entry of Object.entries(user1)) {
+  const key = entry[0];
+  const value = entry[1];
+  console.log(key, value);
+}
+for (const [key, value] of Object.entries(user1)) {
+  console.log(key, value);
+}
 
 // Transformer un object en string
 // et inversement (sérialisation/désérialisation) :
@@ -150,6 +162,7 @@ class Admin extends User {
     return ['admin']
   }
   hello() {
+    // return User.prototype.hello.call(this) + ' (isAdmin)'
     return super.hello() + ' (isAdmin)'
   }
 }
@@ -178,5 +191,5 @@ Object.defineProperty(obj, 'myKey', {
   // déjà par defaut
   // writable: false,
   // enumerable: false, // pas dans le JSON et pas dans les boucles
-  // configurable: false, 
+  // configurable: false,
 })

@@ -1,5 +1,9 @@
-import { expect, test } from "vitest";
+import { afterEach, beforeEach, expect, test } from "vitest";
 import { getRandomInt } from "./random";
+
+// Vont s'exécuter avant et après chaque tests
+// beforeEach(() => {});
+// afterEach(() => {});
 
 test('BAD getRandomInt should return a number between 0 and 10 (excluded)', () => {
   const result = getRandomInt(0, 10);

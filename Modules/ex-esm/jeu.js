@@ -1,7 +1,8 @@
 // importer getRandomInt
-const readline = require('readline');
+import readline from 'readline';
+import { getRandomInt } from './random.js';
 
-class Jeu {
+export class Jeu {
   rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
