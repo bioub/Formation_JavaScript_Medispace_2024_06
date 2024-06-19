@@ -19,9 +19,12 @@
 		},
 		{
 			"path": "Exercice-Build"
+		},
+		{
+			"path": "Web-APIs"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Modules"
+		"liveServer.settings.multiRootWorkspaceName": "Web-APIs"
 	}
 }
