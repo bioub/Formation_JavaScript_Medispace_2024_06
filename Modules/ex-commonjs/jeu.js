@@ -1,5 +1,5 @@
 // importer getRandomInt
-const readline = require('readline');
+const readline = require('node:readline');
 const { getRandomInt } = require('./random.js');
 
 exports.Jeu = class Jeu {

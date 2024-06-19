@@ -13,6 +13,9 @@
 		},
 		{
 			"path": "Modules"
+		},
+		{
+			"path": "Async"
 		}
 	],
 	"settings": {

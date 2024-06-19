@@ -1,5 +1,5 @@
 // importer getRandomInt
-import readline from 'readline';
+import readline from 'node:readline';
 import { getRandomInt } from './random.js';
 
 export class Jeu {
