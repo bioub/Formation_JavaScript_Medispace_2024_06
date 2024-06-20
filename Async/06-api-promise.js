@@ -5,18 +5,20 @@
 //     // ce callback va être appelé au moment du new
 //     // ici on démarre l'opération async
 //     setTimeout(() => {
-//       resolve();
+//       resolve('ABC');
 //     }, delayMs);
 //   });
 // }
 
-// timeout(1000).then(() => {
+// timeout(1000).then((val) => {
 //   console.log('1s');
 // });
 
+// const val = await timeout(1000);
+
 // alternative 1 :
 // utilitaire promisify
-// import { promisify } from "util";
+// import { promisify } from "node:util";
 
 // const timeout = promisify(setTimeout);
 // timeout(1000).then(() => {
@@ -24,16 +26,19 @@
 // });
 
 // alternative 2 :
-// npm i settimeout-promise (ou équivalent)
+// npm i delay (ou équivalent)
 
 // alternative 3 :
 // utiliser la fonction native
 // dans Node elle existe depuis peu
-import { readFile } from "node:fs/promises";
 import { setTimeout } from "node:timers/promises";
 setTimeout(1000).then(() => {
   console.log("1s");
 });
+
+
+import { readFile } from "node:fs/promises";
+
 
 // 4 méthodes statiques utiles
 // pour combiner plusieurs promesses en unes
@@ -63,12 +68,13 @@ setTimeout(1000).then(() => {
 // si le premier est une erreur le race est en erreur
 // Use case :
 // Opération async avec un timeout
-// Promise.race([
-//   readFile('.gitignore'),
-//   setTimeout(100),
-// ]).then(() => {
-
-// });
+// const result = await Promise.race([
+//   readFile('.gitignore').then((buffer) => ({status: 'success', value: buffer})),
+//   setTimeout(100).then((buffer) => ({status: 'timeout'})),
+// ]);
+// if (result.status === 'timeout') {
+//
+// }
 
 // Promise.any
 // idem race
@@ -77,4 +83,4 @@ setTimeout(1000).then(() => {
 // soit rejeté
 // Use case :
 // Ping plusieurs serveurs pour connaitre le plus rapide
-// 
+//

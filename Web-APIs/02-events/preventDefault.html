@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="module">
+    const pEl = document.querySelector('p');
+    pEl.addEventListener('mousedown', (event) => {
+      event.preventDefault();
+    })
+
+    const inputEl = document.querySelector('input');
+    inputEl.addEventListener('beforeinput', (event) => {
+      if (Number.isNaN(Number.parseInt(event.data, 10))) {
+        event.preventDefault();
+      }
+    })
+  </script>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio non quaerat fugit eligendi impedit sequi, et id aspernatur consequatur reiciendis odit placeat mollitia suscipit cupiditate fugiat esse optio consequuntur asperiores?</p>
+  <form>
+    <label>
+      Numéro de carte bleue :
+      <input />
+    </label>
+  </form>
+</body>
+</html>

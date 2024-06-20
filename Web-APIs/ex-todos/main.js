@@ -28,3 +28,11 @@ formEl.addEventListener('submit', (event) => {
 // Ecouter le click de la checkbox
 // toggleEl et cocher / décocher
 // toutes les autres
+toggleEl.addEventListener('click', () => {
+  /** @type {NodeListOf<HTMLInputElement>} */
+  const checkboxEls = listEl.querySelectorAll('.todo-item-completed');
+
+  for (const checkboxEl of checkboxEls) {
+    checkboxEl.checked = toggleEl.checked;
+  }
+})
