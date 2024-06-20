@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      border: 3px solid black;
+      padding: 50px;
+    }
+
+    .box3 {
+      height: 100px;
+    }
+  </style>
+  <script type="module">
+    const divEl = document.querySelector('.box1');
+    divEl.addEventListener('mouseenter', () => {
+      console.log('mouseenter');
+    })
+    divEl.addEventListener('mouseover', () => {
+      console.log('mouseover');
+    })
+    divEl.addEventListener('mouseleave', () => {
+      console.log('mouseleave');
+    })
+    divEl.addEventListener('mouseout', () => {
+      console.log('mouseout');
+    })
+  </script>
+</head>
+<body>
+  <div class="box1">
+    <div class="box2">
+      <div class="box3">
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

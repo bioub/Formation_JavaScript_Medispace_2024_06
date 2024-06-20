@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="module">
+    // ne se propage pas | se propage
+    // focus             | focusin
+    // blur              | focusout
+    // mouseenter        | mouseover
+    // mouseleave        | mouseout
+
+    document.body.addEventListener('focusout', (event) => {
+      if (event.target.nodeName === 'INPUT') {
+        /** @type {HTMLInputElement} */
+        const target = event.target;
+
+        if (target.required && target.value === '') {
+          console.log('Le prénom est obligatoire')
+        }
+
+        if (target.max && target.valueAsNumber > Number(target.max)) {
+          console.log('L\'age est trop grand')
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <input type="text" name="prenom" required>
+  <input type="number" name="age" max="120">
+  <input type="email" name="email">
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      border: 3px solid black;
+      padding: 50px;
+    }
+
+    .box3 {
+      height: 100px;
+    }
+  </style>
+  <script type="module">
+    const divEls = document.querySelectorAll('div');
+
+
+    divEls[0].addEventListener('click', (event) => {
+      // console.log(event.eventPhase);
+      // console.log(event.target.className);
+      // console.log(event.currentTarget.className);
+
+      if (event.target.className === 'box1') {
+        console.log('Vous avez cliqué sur box1');
+      } else if (event.target.className === 'box2') {
+        console.log('Vous avez cliqué sur box2');
+      } else if (event.target.className === 'box3') {
+        console.log('Vous avez cliqué sur box3');
+      }
+
+    })
+    // for (const divEl of divEls) {
+    //   divEl.addEventListener('click', () => {
+    //     console.log(divEl.className);
+    //   });
+    // }
+  </script>
+</head>
+<body>
+  <div class="box1">
+    <div class="box2">
+      <div class="box3">
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
