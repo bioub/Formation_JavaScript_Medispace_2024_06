@@ -12,6 +12,9 @@
     // mouseleave        | mouseout
 
     document.body.addEventListener('focusout', (event) => {
+      /** @type {HTMLElement} */
+      const target = event.target;
+
       if (event.target.nodeName === 'INPUT') {
         /** @type {HTMLInputElement} */
         const target = event.target;

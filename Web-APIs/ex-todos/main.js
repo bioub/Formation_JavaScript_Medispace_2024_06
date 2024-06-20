@@ -1,4 +1,4 @@
-import { createTodoItem } from "./todos.js";
+import { createInputItem, createSpanItem, createTodoItem } from "./todos.js";
 
 /** @type {HTMLFormElement} */
 const formEl = document.querySelector('.todos-form');
@@ -37,13 +37,34 @@ toggleEl.addEventListener('click', () => {
   }
 })
 
-// Exercice : Event Phases
-// En utilisant la propagation et
-// event.target
-// Déplacer le addEventListener du bouton moins ici
-// en écouter le click de listEl
-// Si event.target correspond à un bouton moins (en testant la class par exemple)
-// supprimer le closest ancestor (avec closest idéalement) qui matche
-// la classe .todo-item
 
-// Faire de même pour le dblclick et keydown
+
+listEl.addEventListener('click', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todo-item-delete')) {
+    target.closest('.todo-item')?.remove();
+  }
+});
+
+
+listEl.addEventListener('dblclick', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todo-item-value')) {
+    const inputEl = createInputItem(target.innerText);
+    target.replaceWith(inputEl);
+  }
+});
+
+listEl.addEventListener('keydown', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todo-item-input') && event.key === 'Enter') {
+    const spanEl = createSpanItem(target.value);
+    target.replaceWith(spanEl);
+  }
+});

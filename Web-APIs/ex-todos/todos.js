@@ -28,31 +28,11 @@ export function createTodoItem(todo) {
 
   const spanEl = createSpanItem(todo.title);
 
-  spanEl.addEventListener('dblclick', () => {
-    const inputEl = createInputItem(spanEl.innerText);
-    spanEl.replaceWith(inputEl);
-
-    inputEl.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        const spanEl = createSpanItem(inputEl.value);
-        inputEl.replaceWith(spanEl);
-      }
-    });
-  });
-
   const buttonEl = document.createElement('button');
   buttonEl.className = 'todo-item-delete';
   buttonEl.innerText = '-';
 
   divEl.append(checkboxEl, ' ', spanEl, ' ', buttonEl);
-
-  // Exercice 2
-  // Au click du bouton supprimer divEl
-  // remove()
-
-  buttonEl.addEventListener('click', () => {
-    divEl.remove();
-  });
 
   return divEl;
 }
